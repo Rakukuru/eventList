@@ -1,0 +1,13 @@
+<div>
+<form method="post" action="{% url 'changeLanguage' %}">
+  {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+</div>
+<strong> Welcome, here's the list of the events: </strong>
+{% block content %}
+	{% for event in events %}
+	    <li><a href="/detail?event={{event.id}}&language={{language}}">{{event.name}}</a>: {{event.date}}</li>
+	{% endfor %}
+{% endblock %}

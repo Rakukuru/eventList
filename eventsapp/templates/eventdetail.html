@@ -1,0 +1,14 @@
+<div>
+	<strong>{{eventInfo.name}}</strong> - When: {{eventInfo.date}}
+</div>
+<div>
+	{{eventInfo.description}}
+</div>
+</br>
+Use the form below to receive updates on this event
+<form method="post" action="{% url 'postSubscription' %}">
+  {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="event" value="{{eventInfo.id}}">
+    <input type="submit" value="Submit">
+</form>
