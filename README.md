@@ -12,3 +12,4 @@ TO DO:
 - Add Language selector to Detail view
 - Add Name field to Event Model so they can be easily identified in django-admin
 - Send the Event and EventTranslation to both List and Detail views without the need to construct and additional object that concatenates both
+- Update model.png
